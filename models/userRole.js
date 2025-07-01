@@ -13,6 +13,12 @@ const UserRole = sequelize.define("UserRole", {
 }, {
   tableName: "user_roles",
   timestamps: false,
+  indexes: [
+    {
+      unique: true,
+      fields: ['userId', 'roleId']
+    }
+  ]
 });
 
 module.exports = UserRole;

@@ -1,5 +1,8 @@
 const sequelize = require("../config/db");
 const User = require("./user");
+const Menu = require("./menu")
+const Role = require("./role")
+const UserRole = require("./userRole")
 
 const initDB = async () => {
   try {
@@ -13,4 +16,4 @@ const initDB = async () => {
   }
 };
 
-module.exports = { sequelize, initDB, User };
+module.exports = { sequelize, initDB, User, Menu, Role, UserRole };

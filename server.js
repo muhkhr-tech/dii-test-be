@@ -1,6 +1,9 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const userRoutes = require("./routes/userRoutes");
+const authRoutes = require("./routes/authRoute")
+const menuRoutes = require("./routes/menuRoutes")
+const roleRoutes = require("./routes/roleRoutes")
 const { initDB } = require("./models");
 
 dotenv.config();
@@ -9,10 +12,13 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("User API with PostgreSQL is running...");
+  res.send("Selamat Datang");
 });
 
 app.use("/api/users", userRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/menu", menuRoutes);
+app.use("/api/roles", roleRoutes);
 
 const PORT = process.env.PORT || 5000;
 
