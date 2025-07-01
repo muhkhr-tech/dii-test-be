@@ -4,6 +4,7 @@ const userRoutes = require("./routes/userRoutes");
 const authRoutes = require("./routes/authRoute")
 const menuRoutes = require("./routes/menuRoutes")
 const roleRoutes = require("./routes/roleRoutes")
+const roleMenuAccessRoutes = require("./routes/roleMenuAccessRoutes")
 const { initDB } = require("./models");
 
 dotenv.config();
@@ -19,6 +20,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/menu", menuRoutes);
 app.use("/api/roles", roleRoutes);
+app.use("/api/role-menu-access", roleMenuAccessRoutes)
 
 const PORT = process.env.PORT || 5000;
 
