@@ -3,11 +3,12 @@ const {
   getRole,
   createRole,
 } = require("../controllers/roleController");
+const { authenticateToken } = require("../middleware/auth");
 
 const router = express.Router();
 
 router.route("/")
-  .get(getRole)
-  .post(createRole)
+  .get(authenticateToken, getRole)
+  .post(authenticateToken, createRole)
 
 module.exports = router;

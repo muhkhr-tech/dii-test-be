@@ -8,22 +8,23 @@ const {
   updateUserRole,
   getUserRoles,
 } = require("../controllers/userController");
+const { authenticateToken } = require("../middleware/auth");
 
 const router = express.Router();
 
 router.route("/")
-  .get(getUsers)
-  .post(createUser);
+  .get(authenticateToken, getUsers)
+  .post(authenticateToken, createUser);
 
 router.route("/roles")
-  .put(updateUserRole);
+  .put(authenticateToken, updateUserRole);
 
 router.route("/:id")
-  .get(getUser)
-  .put(updateUser)
-  .delete(deleteUser)
+  .get(authenticateToken, getUser)
+  .put(authenticateToken, updateUser)
+  .delete(authenticateToken, deleteUser)
 
 router.route("/:id/roles")
-  .get(getUserRoles)
+  .get(authenticateToken, getUserRoles)
 
 module.exports = router;
