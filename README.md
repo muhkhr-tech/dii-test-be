@@ -158,7 +158,6 @@ Response Body Success (Tidak/belum ada Role) :
 {
     "message": "Login berhasil",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRva3RlcmFuZGkiLCJpYXQiOjE3NTE0MjIzNDl9.c4foLFfKNbtj-3q8G0itDIPiAV6ZnvXM1s6Y3ahTAPk",
-    "menu": [],
     "user": {
         "id": 3,
         "username": "dokterandi",
@@ -193,148 +192,6 @@ Response Body Success :
 {
     "message": "Login berhasil",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6MSwiaWF0IjoxNzUxNDIwNjA2fQ.E_46CStgKiEonLy-1Fi1aSXMGDhNHcGx6XtL80HmIqA",
-    "menu": [
-        {
-            "id": 1,
-            "name": "Menu 1",
-            "path": "/menu1",
-            "parentId": null,
-            "children": [
-                {
-                    "id": 2,
-                    "name": "Menu 1.1",
-                    "path": "/menu1.1",
-                    "parentId": 1,
-                    "children": []
-                },
-                {
-                    "id": 3,
-                    "name": "Menu 1.2",
-                    "path": "/menu1.2",
-                    "parentId": 1,
-                    "children": [
-                        {
-                            "id": 4,
-                            "name": "Menu 1.2.1",
-                            "path": "/menu1.2.1",
-                            "parentId": 3,
-                            "children": []
-                        },
-                        {
-                            "id": 5,
-                            "name": "Menu 1.2.2",
-                            "path": "/menu1.2.2",
-                            "parentId": 3,
-                            "children": []
-                        }
-                    ]
-                },
-                {
-                    "id": 6,
-                    "name": "Menu 1.3",
-                    "path": "/menu1.3",
-                    "parentId": 1,
-                    "children": [
-                        {
-                            "id": 7,
-                            "name": "Menu 1.3.1",
-                            "path": "/menu1.3.1",
-                            "parentId": 6,
-                            "children": []
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "name": "Menu 2",
-            "path": "/menu2",
-            "parentId": null,
-            "children": [
-                {
-                    "id": 9,
-                    "name": "Menu 2.1",
-                    "path": "/menu2.1",
-                    "parentId": 8,
-                    "children": []
-                },
-                {
-                    "id": 10,
-                    "name": "Menu 2.2",
-                    "path": "/menu2.2",
-                    "parentId": 8,
-                    "children": [
-                        {
-                            "id": 11,
-                            "name": "Menu 2.2.1",
-                            "path": "/menu2.2.1",
-                            "parentId": 10,
-                            "children": []
-                        },
-                        {
-                            "id": 12,
-                            "name": "Menu 2.2.2",
-                            "path": "/menu2.2.2",
-                            "parentId": 10,
-                            "children": [
-                                {
-                                    "id": 13,
-                                    "name": "Menu 2.2.2.1",
-                                    "path": "/menu2.2.2.1",
-                                    "parentId": 12,
-                                    "children": []
-                                },
-                                {
-                                    "id": 14,
-                                    "name": "Menu 2.2.2.2",
-                                    "path": "/menu2.2.2.2",
-                                    "parentId": 12,
-                                    "children": []
-                                }
-                            ]
-                        },
-                        {
-                            "id": 15,
-                            "name": "Menu 2.2.3",
-                            "path": "/menu2.2.3",
-                            "parentId": 10,
-                            "children": []
-                        }
-                    ]
-                },
-                {
-                    "id": 16,
-                    "name": "Menu 2.3",
-                    "path": "/menu2.3",
-                    "parentId": 8,
-                    "children": []
-                }
-            ]
-        },
-        {
-            "id": 17,
-            "name": "Menu 3",
-            "path": "/menu3",
-            "parentId": null,
-            "children": [
-                {
-                    "id": 18,
-                    "name": "Menu 3.1",
-                    "path": "/menu3.1",
-                    "parentId": 17,
-                    "children": []
-                },
-                {
-                    "id": 19,
-                    "name": "Menu 3.2",
-                    "path": "/menu3.2",
-                    "parentId": 17,
-                    "children": []
-                }
-            ]
-        }
-    ],
     "user": {
         "id": 1,
         "username": "admin",
@@ -381,149 +238,7 @@ Response Body Success :
 ```json
 {
     "message": "Berhasil memilih role",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6MSwiaWF0IjoxNzUxNDIzNzEyfQ.V3F5Xpq_MObqtNbR3QpPgOKkptO7dbT6gOU_0SmFRsk",
-    "menu": [
-        {
-            "id": 1,
-            "name": "Menu 1",
-            "path": "/menu1",
-            "parentId": null,
-            "children": [
-                {
-                    "id": 2,
-                    "name": "Menu 1.1",
-                    "path": "/menu1.1",
-                    "parentId": 1,
-                    "children": []
-                },
-                {
-                    "id": 3,
-                    "name": "Menu 1.2",
-                    "path": "/menu1.2",
-                    "parentId": 1,
-                    "children": [
-                        {
-                            "id": 4,
-                            "name": "Menu 1.2.1",
-                            "path": "/menu1.2.1",
-                            "parentId": 3,
-                            "children": []
-                        },
-                        {
-                            "id": 5,
-                            "name": "Menu 1.2.2",
-                            "path": "/menu1.2.2",
-                            "parentId": 3,
-                            "children": []
-                        }
-                    ]
-                },
-                {
-                    "id": 6,
-                    "name": "Menu 1.3",
-                    "path": "/menu1.3",
-                    "parentId": 1,
-                    "children": [
-                        {
-                            "id": 7,
-                            "name": "Menu 1.3.1",
-                            "path": "/menu1.3.1",
-                            "parentId": 6,
-                            "children": []
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "name": "Menu 2",
-            "path": "/menu2",
-            "parentId": null,
-            "children": [
-                {
-                    "id": 9,
-                    "name": "Menu 2.1",
-                    "path": "/menu2.1",
-                    "parentId": 8,
-                    "children": []
-                },
-                {
-                    "id": 10,
-                    "name": "Menu 2.2",
-                    "path": "/menu2.2",
-                    "parentId": 8,
-                    "children": [
-                        {
-                            "id": 11,
-                            "name": "Menu 2.2.1",
-                            "path": "/menu2.2.1",
-                            "parentId": 10,
-                            "children": []
-                        },
-                        {
-                            "id": 12,
-                            "name": "Menu 2.2.2",
-                            "path": "/menu2.2.2",
-                            "parentId": 10,
-                            "children": [
-                                {
-                                    "id": 13,
-                                    "name": "Menu 2.2.2.1",
-                                    "path": "/menu2.2.2.1",
-                                    "parentId": 12,
-                                    "children": []
-                                },
-                                {
-                                    "id": 14,
-                                    "name": "Menu 2.2.2.2",
-                                    "path": "/menu2.2.2.2",
-                                    "parentId": 12,
-                                    "children": []
-                                }
-                            ]
-                        },
-                        {
-                            "id": 15,
-                            "name": "Menu 2.2.3",
-                            "path": "/menu2.2.3",
-                            "parentId": 10,
-                            "children": []
-                        }
-                    ]
-                },
-                {
-                    "id": 16,
-                    "name": "Menu 2.3",
-                    "path": "/menu2.3",
-                    "parentId": 8,
-                    "children": []
-                }
-            ]
-        },
-        {
-            "id": 17,
-            "name": "Menu 3",
-            "path": "/menu3",
-            "parentId": null,
-            "children": [
-                {
-                    "id": 18,
-                    "name": "Menu 3.1",
-                    "path": "/menu3.1",
-                    "parentId": 17,
-                    "children": []
-                },
-                {
-                    "id": 19,
-                    "name": "Menu 3.2",
-                    "path": "/menu3.2",
-                    "parentId": 17,
-                    "children": []
-                }
-            ]
-        }
-    ]
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6MSwiaWF0IjoxNzUxNDIzNzEyfQ.V3F5Xpq_MObqtNbR3QpPgOKkptO7dbT6gOU_0SmFRsk"
 }
 ```
 
@@ -894,7 +609,7 @@ Response Body Success :
 
 ### Get Menu Akses API
 
-Endpoint : PUT /api/role-menu-access
+Endpoint : GET /api/role-menu-access
 
 Headers: Bearer <token>
 
@@ -903,114 +618,26 @@ Response Body Success :
 ```json
 [
     {
-        "id": 1,
-        "roleId": 1,
-        "menuId": 1
-    },
-    {
-        "id": 2,
-        "roleId": 1,
-        "menuId": 2
-    },
-    {
-        "id": 3,
-        "roleId": 1,
-        "menuId": 3
-    },
-    {
-        "id": 4,
-        "roleId": 1,
-        "menuId": 4
-    },
-    {
-        "id": 5,
-        "roleId": 1,
-        "menuId": 5
-    },
-    {
-        "id": 6,
-        "roleId": 1,
-        "menuId": 6
-    },
-    {
-        "id": 7,
-        "roleId": 1,
-        "menuId": 7
-    },
-    {
-        "id": 8,
-        "roleId": 1,
-        "menuId": 8
-    },
-    {
-        "id": 9,
-        "roleId": 1,
-        "menuId": 9
-    },
-    {
-        "id": 10,
-        "roleId": 1,
-        "menuId": 10
-    },
-    {
-        "id": 11,
-        "roleId": 1,
-        "menuId": 11
-    },
-    {
-        "id": 12,
-        "roleId": 1,
-        "menuId": 12
-    },
-    {
-        "id": 13,
-        "roleId": 1,
-        "menuId": 13
-    },
-    {
-        "id": 14,
-        "roleId": 1,
-        "menuId": 14
-    },
-    {
-        "id": 15,
-        "roleId": 1,
-        "menuId": 15
-    },
-    {
-        "id": 16,
-        "roleId": 1,
-        "menuId": 16
-    },
-    {
         "id": 17,
-        "roleId": 1,
-        "menuId": 17
-    },
-    {
-        "id": 18,
-        "roleId": 1,
-        "menuId": 18
-    },
-    {
-        "id": 19,
-        "roleId": 1,
-        "menuId": 19
-    },
-    {
-        "id": 20,
-        "roleId": 2,
-        "menuId": 1
-    },
-    {
-        "id": 21,
-        "roleId": 2,
-        "menuId": 2
-    },
-    {
-        "id": 22,
-        "roleId": 3,
-        "menuId": 17
+        "name": "Menu 3",
+        "path": "/menu3",
+        "parentId": null,
+        "children": [
+            {
+                "id": 18,
+                "name": "Menu 3.1",
+                "path": "/menu3.1",
+                "parentId": 17,
+                "children": []
+            },
+            {
+                "id": 19,
+                "name": "Menu 3.2",
+                "path": "/menu3.2",
+                "parentId": 17,
+                "children": []
+            }
+        ]
     }
 ]
 ```
