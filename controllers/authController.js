@@ -19,7 +19,7 @@ exports.loginUser = async (req, res) => {
 
     const user = await User.findOne({ where: { username } });
     if (!user) {
-      return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "User tidak ditemukan" });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
@@ -85,6 +85,10 @@ exports.chooseUserRole = async (req, res) => {
   const userRoles = req.user.role
   const username = req.user.username
   const selectedRole = parseInt(role)
+  
+  if (!Array.isArray(userRoles)) {
+    return res.status(200).json({ message: "Anda sudah memilih role" });
+  }
   
   if (!userRoles.includes(selectedRole)) return res.status(400).json({message: "Role tidak ditemukan"})
   

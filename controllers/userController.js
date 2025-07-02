@@ -31,7 +31,7 @@ exports.createUser = async (req, res) => {
     });
 
     return res.status(201).json({
-      message: "User created successfully",
+      message: "Berhasil membuat user baru",
       user: {
         id: newUser.id,
         username: newUser.username,
@@ -39,7 +39,7 @@ exports.createUser = async (req, res) => {
       }
     });
   } catch (error) {
-    console.error("Error creating user:", error);
+    console.error("Error membuat user:", error);
     return res.status(500).json({ message: "Internal Server Error" });
   }
 };
@@ -49,11 +49,18 @@ exports.updateUser = async (req, res) => {
   const user = await User.findByPk(req.params.id);
   if (!user) return res.status(404).json({ message: "User tidak ditemukan" });
 
-  await user.update({
+  const userUpdated = await user.update({
     username,
-    name
+    name,
   });
-  res.json(user);
+  
+  res.status(200).json({
+    message: "Berhasil mengubah user",
+    user: {
+      username: userUpdated.username,
+      name: userUpdated.name
+    }
+  });
 };
 
 
@@ -62,7 +69,7 @@ exports.deleteUser = async (req, res) => {
   if (!user) return res.status(404).json({ message: "User tidak ditemukan" });
 
   await user.destroy();
-  res.json({ message: "User deleted" });
+  res.json({ message: "User berhasil dihapus" });
 };
 
 exports.getUserRoles = async (req, res) => {
