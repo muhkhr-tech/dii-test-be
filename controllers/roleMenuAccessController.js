@@ -1,8 +1,28 @@
-const { RoleMenuAccess } = require("../models");
+const { RoleMenuAccess, Menu, sequelize } = require("../models");
+const { buildMenuTree } = require("./menuController");
 
 exports.getRoleMenuAccess = async (req, res) => {
-  const roleMenuAccess = await RoleMenuAccess.findAll();
-  res.json(roleMenuAccess);
+  const { role } = req.user
+  const allMenus = await Menu.findAll({attributes: ['id', 'name', 'path', 'parentId'], raw: true})
+
+  const menuTree = buildMenuTree(allMenus)
+
+  const roleMenuAccess = await sequelize.query(`
+    SELECT *
+    FROM role_menu_access rma
+    WHERE rma."roleId" = :role
+  `, {
+    replacements: { role },
+    type: sequelize.QueryTypes.SELECT,
+  });
+  
+  const allowedMenuIds = roleMenuAccess.map(menu => menu.menuId)
+
+  const menus = menuTree.filter(menu => (
+    allowedMenuIds.includes(menu.id)
+  ))
+
+  res.json(menus);
 };
 
 exports.updateRoleMenuAccess = async (req, res) => {
