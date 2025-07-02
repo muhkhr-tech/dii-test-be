@@ -19,3 +19,14 @@ exports.createMenu = async (req, res) => {
     return res.status(500).json({ message: "Internal Server Error" });
   }
 };
+
+function buildMenuTree(menuList, parentId = null) {
+  return menuList
+    .filter(menu => menu.parentId === parentId)
+    .map(menu => ({
+      ...menu,
+      children: buildMenuTree(menuList, menu.id)
+    }));
+}
+
+exports.buildMenuTree = buildMenuTree

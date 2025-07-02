@@ -17,7 +17,7 @@ router.route("/")
   .post(authenticateToken, createUser);
 
 router.route("/roles")
-  .put(authenticateToken, updateUserRole);
+  .put(updateUserRole);
 
 router.route("/:id")
   .get(authenticateToken, getUser)

@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require("bcrypt")
-const { User, UserRole } = require("../models");
+const { User, UserRole, RoleMenuAccess, Menu } = require("../models");
+const { buildMenuTree } = require('./menuController');
 
 const generateToken = async (username, role) => {
   const token = jwt.sign({
@@ -52,9 +53,19 @@ exports.loginUser = async (req, res) => {
 
     const token = await generateToken(username, roleIds[0])
 
+    let menu = []
+
+    if (roleIds[0]) {
+      const menus = await Menu.findAll({attributes: ['id', 'name', 'path', 'parentId'], raw: true})
+
+      menu = buildMenuTree(menus)
+
+    }
+
     return res.json({
       message: "Login berhasil",
       token: token,
+      menu: menu,
       user: {
         id: user.id,
         username: user.username,
@@ -77,10 +88,20 @@ exports.chooseUserRole = async (req, res) => {
   
   if (!userRoles.includes(selectedRole)) return res.status(400).json({message: "Role tidak ditemukan"})
   
-  const newToken = await generateToken(username, role)
+  const newToken = await generateToken(username, selectedRole)
+
+  let menu = []
+
+  if (selectedRole) {
+    const menus = await Menu.findAll({attributes: ['id', 'name', 'path', 'parentId'], raw: true})
+
+    menu = buildMenuTree(menus)
+
+  }
 
   res.json({
       message: "Berhasil memilih role",
-      token: newToken
+      token: newToken,
+      menu: menu
     });
 }
