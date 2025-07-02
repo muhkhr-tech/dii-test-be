@@ -1,6 +1,6 @@
-#### Daftar Endpoints
+## Fitur Manajemen User
 
-## GET Users API
+### GET Users API
 
 Endpoint : GET /api/users
 
@@ -31,7 +31,7 @@ Response Body Success :
 ]
 ```
 
-## GET User By ID API
+### GET User By ID API
 
 Endpoint : GET /api/users/:user_id
 
@@ -51,7 +51,7 @@ Response Body Success :
 }
 ```
 
-## Create User API
+### Create User API
 
 Endpoint : POST /api/users
 
@@ -80,7 +80,50 @@ Response Body Success :
 }
 ```
 
-## Login User API
+### Update User API
+
+Endpoint : PUT /api/users/:id
+
+Headers: Bearer <token>
+
+Request Body :
+
+```json
+{
+    "name": "dr. Andi Wijaya Kusuma",
+	"username": "dokterandi"
+}
+```
+
+Response Body Success :
+
+```json
+{
+    "message": "Berhasil mengubah user",
+    "user": {
+        "username": "dokterandi",
+        "name": "dr. Andi Wijaya Kusuma"
+    }
+}
+```
+
+### Delete User API
+
+Endpoint : DELETE /users/:id
+
+Headers: Bearer <token>
+
+Response Body Success :
+
+```json
+{
+    "message": "User berhasil dihapus"
+}
+```
+
+## Fitur Otentikasi
+
+### Login User API
 
 Endpoint : POST /api/auth/login
 
@@ -303,7 +346,7 @@ Response Body Success :
 }
 ```
 
-## Pilih User Role API
+### Pilih User Role API
 
 Endpoint : POST /api/auth/choose-user-role
 
@@ -484,48 +527,9 @@ Response Body Success :
 }
 ```
 
-## Update User API
+## Fitur CRUD Role
 
-Endpoint : PUT /api/users/:id
-
-Headers: Bearer <token>
-
-Request Body :
-
-```json
-{
-    "name": "dr. Andi Wijaya Kusuma",
-	"username": "dokterandi"
-}
-```
-
-Response Body Success :
-
-```json
-{
-    "message": "Berhasil mengubah user",
-    "user": {
-        "username": "dokterandi",
-        "name": "dr. Andi Wijaya Kusuma"
-    }
-}
-```
-
-## Delete User API
-
-Endpoint : DELETE /users/:id
-
-Headers: Bearer <token>
-
-Response Body Success :
-
-```json
-{
-    "message": "User berhasil dihapus"
-}
-```
-
-## Create Role API
+### Create Role API
 
 Endpoint : POST /api/roles
 
@@ -545,7 +549,7 @@ Response Body Success :
 }
 ```
 
-## Get Role API
+### Get Role API
 
 Endpoint : GET /api/roles
 
@@ -576,7 +580,9 @@ Response Body Success :
 ]
 ```
 
-## Create Menu API
+## Fitur CRUD Menu
+
+### Create Menu API
 
 Endpoint : POST /api/menu
 
@@ -619,7 +625,7 @@ Response Body Success :
 }
 ```
 
-## Get Menu API
+### Get Menu API
 
 Endpoint : GET /api/menu
 
@@ -784,7 +790,9 @@ Response Body Success :
 ]
 ```
 
-## Manajemen Role User Akses API
+## Fitur Manajemen Akses Role
+
+### Update Role User Akses API
 
 Endpoint : PUT /api/users/roles
 
@@ -811,7 +819,7 @@ Response Body Success :
 }
 ```
 
-## Get Role User Akses API
+### Get Role User Akses API
 
 Endpoint : PUT /api/users/:user_id/roles
 
@@ -834,7 +842,9 @@ Response Body Success :
 ]
 ```
 
-## Manajemen Menu Akses API
+## Fitur Manajemen Akses Menu
+
+### Update Menu Akses API
 
 Endpoint : PUT /api/role-menu-access
 
@@ -882,7 +892,7 @@ Response Body Success :
 }
 ```
 
-## Get Menu Akses API
+### Get Menu Akses API
 
 Endpoint : PUT /api/role-menu-access
 

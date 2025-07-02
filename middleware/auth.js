@@ -1,30 +1,30 @@
 const jwt = require('jsonwebtoken');
 const { UserRole } = require('../models');
 
-const checkUserRoles = async (req, res, next) => {
-  try {
-    console.log(req)
-    const userId = req.user?.id;
+// const checkUserRoles = async (req, res, next) => {
+//   try {
+//     console.log(req)
+//     const userId = req.user?.id;
 
-    if (!userId) {
-      return res.status(401).json({ message: 'Unauthorized: user not found in request' });
-    }
+//     if (!userId) {
+//       return res.status(401).json({ message: 'Unauthorized: user not found in request' });
+//     }
 
-    const roles = await UserRole.findAll({
-      where: { user_id: userId },
-      attributes: ['role_id']
-    });
+//     const roles = await UserRole.findAll({
+//       where: { user_id: userId },
+//       attributes: ['role_id']
+//     });
 
-    req.user.roleCount = roles.length;
-    req.user.roleIds = roles.map(r => r.role_id);
+//     req.user.roleCount = roles.length;
+//     req.user.roleIds = roles.map(r => r.role_id);
 
-    next();
+//     next();
 
-  } catch (error) {
-    console.error('Error checking user roles:', error);
-    return res.status(500).json({ message: 'Internal server error saat cek role' });
-  }
-};
+//   } catch (error) {
+//     console.error('Error checking user roles:', error);
+//     return res.status(500).json({ message: 'Internal server error saat cek role' });
+//   }
+// };
 
 const authenticateToken = async (req, res, next) => {
   const authToken = req.headers['authorization'];
@@ -50,4 +50,4 @@ const authenticateToken = async (req, res, next) => {
   next()
 }
 
-module.exports = {checkUserRoles, authenticateToken};
+module.exports = {authenticateToken};
